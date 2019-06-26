@@ -44,3 +44,35 @@ neapolitan_ice_cream = Cake.new("Neapolitan Ice Cream","180 calories per slice",
 apple_pie_muffins = Muffin.new("Apple Pie Muffins", "180 calories per muffin","These buttery fruity muffins are ideal for dessert or fancy weekend breakfast treats.", "2.70", "https://friendly-bakery-nycda.herokuapp.com/images/muffins/apple-pie-muffins.jpg")
 coffee_cake_muffins = Muffin.new("Coffee Cake Muffins","180 calories per muffin","Coffee Cake Muffins, with its sweet center and crumble topping, make a great dish to serve at a brunch, or bring to a potluck.","2.70","https://friendly-bakery-nycda.herokuapp.com/images/muffins/coconut-muffins.jpg")
 coconut_muffins = Muffin.new("Coconut Muffins", "180 calories per muffin", "Muffins loaded with coconut are one my favorite muffins for an easy breakfast or a sweet treat late at night.", "2.70", "https://friendly-bakery-nycda.herokuapp.com/images/muffins/coconut-muffins.jpg")
+
+
+
+get "/" do
+  erb :home
+end
+
+get "/cakes" do
+  @cakes = [lemon_meringue_cake, vanilla_cake, neapolitan_ice_cream]
+  erb :cakes
+end
+
+get "/cookies" do
+  @cookies = [chocolate_chip_cookie, peanut_butter_cookie, rasperry_cookie]
+  erb :cookies
+end
+get "/muffins" do
+  @muffins = [apple_pie_muffins,coffee_cake_muffins,coconut_muffins]
+  erb :muffins
+end
+
+get "/events" do
+  erb :events
+end
+
+get "/home" do
+  erb :home
+end
+
+get "/cart" do
+  erb :cart
+end

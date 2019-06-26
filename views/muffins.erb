@@ -1,13 +1,14 @@
 <div class="main-grid">
-<% for i in 0..3 do %>
-<div class="grid-container">
-  <img src="<%= %>">
+  <% for i in 0..2 do %>
   <div>
-    <p><%=  %></p>
-    <p><%=  %></p>
-    <p><%=  %></p>
-    <p><%=  %></p>
+    <h2><%= @muffins[i].name %></h2>
+    <div class = "products">
+        <img src="<%= @muffins[i].image %>">
+        <p><%= @muffins[i].description %></p>
+        <p><%= @muffins[i].calories %></p>
+        <p><%= @muffins[i].price %></p>
+    </div>
   </div>
-</div>
-<% end %>
+  <% end %>
+
 </div>
