@@ -1,11 +1,18 @@
 <div class="main-grid">
   <% for i in 0..2 do %>
-  <div class = "wrapper">
+  <div class = "wrapper dropdown">
     <h2><%= @cakes[i].name %></h2>
     <div class = "products">
         <img src="<%= @cakes[i].image %>">
         <p><%= @cakes[i].description %></p>
         <p><%= "#{@cakes[i].calories}" %> for $<%= @cakes[i].price %></p>
+    </div>
+    <div class="dropdown-content">
+      <form action="/cakes" method="get">
+        Quantity:
+        <input class="input-area" type="number" name="cake<%=i%>" min="1">
+        <input type="submit" value="Order">
+      </form>
     </div>
   </div>
   <% end %>

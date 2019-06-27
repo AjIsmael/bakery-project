@@ -41,7 +41,7 @@ chocolate_chip_cookie = Cookie.new("Chocolate Chip Cookie", "78 calories per coo
 peanut_butter_cookie = Cookie.new("Peanut Butter Cookie", "135 calories per cookie", "cookie that is distinguished for having the best peanut butter","1.60", "https://assets.marthastewart.com/styles/wmax-1500/d29/peanut-butter-cookies-a100600/peanut-butter-cookies-a100600_horiz.jpg?itok=4_xrYDLm")
 rasperry_cookie = Cookie.new("Rasperry Cookie", "120 calories per cookie", "Thumbprint cookies with a buttery base, filled with raspberry preserves","1.60", "https://friendly-bakery-nycda.herokuapp.com/images/cookies/raspberry-cookies.jpg")
 
-lemon_meringue_cake = Cake.new("Lemon Meringue Cake", "170 calories per slice", "It's not only a deliciously different dessert, but it's also a conversation piece!", "4.50", "https://friendly-bakery-nycda.herokuapp.com/images/cakes/lemon-meringue-cake.jpg")
+lemon_meringue_cake = Cake.new("Lemon Meringue Cake", "170 calories per slice", "It's not only a deliciously different dessert; it's also a conversation piece!", "4.50", "https://friendly-bakery-nycda.herokuapp.com/images/cakes/lemon-meringue-cake.jpg")
 vanilla_cake = Cake.new("Vanilla Cake with Blueberries", "170 calories per slice", "pairs fluffy vanilla cake layers with a silky vanilla buttercream.", "4.50", "https://friendly-bakery-nycda.herokuapp.com/images/cakes/vanilla-white-cake.jpg")
 neapolitan_ice_cream = Cake.new("Neapolitan Ice Cream","180 calories per slice","tasty combination of chocolate, strawberry, and vanilla ice cream. ", "4.50", "https://friendly-bakery-nycda.herokuapp.com/images/cakes/neapolitan-ice-cream-cake.jpg")
 
@@ -57,6 +57,16 @@ end
 
 get "/cakes" do
   @cakes = [lemon_meringue_cake, vanilla_cake, neapolitan_ice_cream]
+  if params[:cake0].to_i > 0
+    Orders << [lemon_meringue_cake.name, params[:cake0],lemon_meringue_cake.price]
+  end
+  if params[:cake1].to_i > 0
+    Orders << [vanilla_cake.name, params[:cake1],vanilla_cake.price]
+  end
+  if params[:cake2].to_i > 0
+    Orders << [neapolitan_ice_cream.name, params[:cake2],neapolitan_ice_cream.price]
+  end
+  @ordersNum = Orders.length
   erb :cakes
 end
 
@@ -65,10 +75,27 @@ get "/cookies" do
   if params[:cookie0].to_i > 0
     Orders << [chocolate_chip_cookie.name, params[:cookie0],chocolate_chip_cookie.price]
   end
+  if params[:cookie1].to_i > 0
+    Orders << [peanut_butter_cookie.name, params[:cookie0],peanut_butter_cookie.price]
+  end
+  if params[:cookie2].to_i > 0
+    Orders << [rasperry_cookie.name, params[:cookie0],rasperry_cookie.price]
+  end
+  @ordersNum = Orders.length
   erb :cookies
 end
 get "/muffins" do
   @muffins = [apple_pie_muffins,coffee_cake_muffins,coconut_muffins]
+  if params[:muffin0].to_i > 0
+    Orders << [apple_pie_muffins.name, params[:muffin0],apple_pie_muffins.price]
+  end
+  if params[:muffin1].to_i > 0
+    Orders << [coffee_cake_muffins.name, params[:muffin1],coffee_cake_muffins.price]
+  end
+  if params[:muffin2].to_i > 0
+    Orders << [coconut_muffins.name, params[:muffin2],coconut_muffins.price]
+  end
+  @ordersNum = Orders.length
   erb :muffins
 end
 
