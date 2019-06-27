@@ -1,17 +1,25 @@
-.navbar {
-  position: fixed;
-  background-color: rgb(206, 206, 206, 1);
-  top: 0;
-  padding-left:30%;
-  width:100%;
-  z-index: 5;
+
+.navbar{
+  position:relative;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-box-pack:justify;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  padding:.5rem 1rem;
+  background-color: #e3f2fd;
 }
 .navbar a {
   float: left;
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
   margin-left: 20px;
 }
@@ -23,34 +31,60 @@
 .grid-container {
   display: grid;
   grid-template: auto/ 49% 49%;
-  width: 80%;
+  width: 100%;
   justify-content: center;
   padding-top: 10%;
   padding-left: 10%;
 }
+.wrapper{
+  background-color: #e3f2fd;
+}
+
+.detail-container {
+
+}
 
 body {
   margin: 0;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/000/162/893/original/vector-laminate-floor-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
+.working-area {
+  margin-top: 10%;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
 .main-grid {
   display: grid;
-  grid-template: auto / 30% 30% 30%;
+  grid-template: 55vh / 30% 30% 30%;
   grid-gap: 5%;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5%;
+  width: 100%;
+  margin-top: 3vh;
+
 }
 img {
   width: 300px;
   height: 300px;
 }
-.products{
-  width: 100%;
-}
+
 .products img {
-  width: 200px;
-  height: 200px;
-  justify-content: center;
+  width: 93%;
+  height: 25vh;
+  border: 0.8vh solid white;
+  margin-left: 3px;
+}
+h1, h2 {
+  text-align: center;
+}
+h2 {
+  font-size: 1.3em;
+  font-style: italic;
+}
+.footer {
+  width: 100%;
+  margin-top: 3vh;
+  grid-template: 55vh / 19% 19% 19% 19% 19%;
+  
 }
