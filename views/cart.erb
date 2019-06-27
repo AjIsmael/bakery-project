@@ -1,3 +1,15 @@
-<% for x in @order %>
-  <p><%= x[0] %>                         <%= x[1] %>                      <%= x[2] %></p>
-<%end %>
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>
+  </tr>
+  <% for x in @order %>
+  <tr>
+    <th><%= x[0] %></th>
+    <th><%= x[1] %> </th>
+    <th><%= x[2]*x[1] %></th>
+  </tr>
+  <%end %>
+</table>
