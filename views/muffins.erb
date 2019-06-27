@@ -5,8 +5,7 @@
     <div class = "products">
         <img src="<%= @muffins[i].image %>">
         <p><%= @muffins[i].description %></p>
-        <p><%= @muffins[i].calories %></p>
-        <p><%= @muffins[i].price %></p>
+        <p><%= "#{@muffins[i].calories}" %> for $<%= @muffins[i].price %></p>
     </div>
   </div>
   <% end %>

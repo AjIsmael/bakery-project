@@ -40,11 +40,8 @@
   background-color: #e3f2fd;
 }
 .home-page-wrapper {
-  height: 35vh;
-}
-
-.detail-container {
-
+  height: 38vh;
+  display: block;
 }
 
 body {
@@ -52,18 +49,20 @@ body {
   background-image: url("https://static.vecteezy.com/system/resources/previews/000/162/893/original/vector-laminate-floor-texture.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 .working-area {
   margin-top: 1.5%;
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
+
 }
 .short-detail {
   display: block;
   height: 19vh;
   width: 100%;
-  margin-top: 6vh;
+  margin-top: 10vh;
 
 }
 .home-grid {
@@ -103,13 +102,36 @@ h5,h4,h6{
 }
 #logo {
   width:20%;
-  height: 7% !important;
+  height: 100% !important;
   margin-left: 40%;
+  position: sticky;
 }
 h2 {
   font-size: 1.3em;
   font-style: italic;
 }
+p{
+  font-family: serif;
+  text-align: left;
+  margin-left: 1px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content .input-area {
+  width: 10%;
+}
+.dropdown:hover .dropdown-content {display: block;}
+
 .footer {
   width: 100%;
   margin-top: 3vh;

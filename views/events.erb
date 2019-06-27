@@ -1,0 +1,18 @@
+<form action="/events" method="get">
+  <input type="text" name="address" placeholder="Which Area?">
+  <input type="submit">
+</form>
+
+<div class="main-grid">
+  <% for i in 0..2 do %>
+  <div class = "wrapper">
+    <h2><%= @titles[i] %></h2>
+    <div class = "products">
+        <img src="<%= @image[i]%>">
+        <a href="<%= @description[i] %>">Click for more details.</a>
+        <p>Date <%= @date[i] %></p>
+    </div>
+  </div>
+  <% end %>
+
+</div>
