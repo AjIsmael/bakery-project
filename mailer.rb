@@ -7,7 +7,7 @@ ActionMailer::Base.smtp_settings = {
   address:    "smtp.gmail.com",
   port:       '587',
   user_name:  ENV['User_email'],
-  password:   ENV['user_password'],
+  password:   ENV['email_password'],
   authentication: :plain
 }
 
