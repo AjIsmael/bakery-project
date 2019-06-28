@@ -1,9 +1,15 @@
 require 'sinatra'
 require "httparty"
+require "action_mailer"
+require "./mailer.rb"
 
 app_key = 'AVPKBRW3EJMHUBKBT347'
 
 Orders = []
+def send_email(rec)
+    Newsletter.w(rec).deliver_now
+end
+
 def add_order(name, quantity)
   new_item = true
   for order in Orders
