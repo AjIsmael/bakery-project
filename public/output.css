@@ -1,0 +1,178 @@
+.navbar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #e3f2fd;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.navbar a:hover {
+  transform: scale(1.5);
+  color: green;
+  transition-duration: 2s;
+}
+
+.grid-container {
+  display: grid;
+  grid-template: auto/49% 49%;
+  width: 100%;
+  justify-content: center;
+  padding-top: 10%;
+  padding-left: 10%;
+}
+
+.wrapper {
+  background-color: #e3f2fd;
+}
+
+.home-page-wrapper {
+  height: 38vh;
+  display: block;
+}
+
+body {
+  margin: 0;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/000/162/893/original/vector-laminate-floor-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.working-area {
+  margin-top: 1.5%;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.short-detail {
+  display: block;
+  height: 19vh;
+  width: 100%;
+  margin-top: 10vh;
+}
+
+.home-grid {
+  display: grid;
+  grid-template: 30vh/30% 30% 30%;
+  grid-gap: 5%;
+  width: 100%;
+  margin-top: 3vh;
+}
+
+.main-grid {
+  display: grid;
+  grid-template: 55vh/30% 30% 30%;
+  grid-gap: 5%;
+  width: 100%;
+  margin-top: 3vh;
+}
+
+.home-grid img, .products img {
+  width: 93%;
+  height: 25vh;
+  border: 0.8vh solid white;
+  margin-left: 3px;
+}
+
+h1, h2, h5, h6 {
+  text-align: center;
+}
+
+h5, h4, h6 {
+  margin: 1.6em;
+  top: 0;
+}
+
+#logo {
+  width: 20%;
+  height: 100% !important;
+  margin-left: 40%;
+  position: sticky;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+p {
+  font-family: serif;
+  text-align: left;
+  margin-left: 1px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content .input-area {
+  width: 10%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 3vh;
+  grid-template: 35vh/19% 19% 19% 19% 19%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #e3f2fd;
+}
+.footer div {
+  display: block;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+table td, table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+table .centered-td {
+  text-align: center;
+}
+
+/*# sourceMappingURL=output.css.map */

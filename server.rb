@@ -4,6 +4,18 @@ require "httparty"
 app_key = 'AVPKBRW3EJMHUBKBT347'
 
 Orders = []
+def add_order(name, quantity)
+  new_item = true
+  for order in Orders
+    if order[0] == name.name
+      order[1] += quantity
+      new_item = false
+    end
+  end
+  if new_item == true
+    Orders << [name.name, quantity, name.price]
+  end
+end
 class Cookie
   attr_accessor :name, :calories, :description, :price, :image
   def initialize(name, calories, description, price, image)
@@ -58,13 +70,13 @@ end
 get "/cakes" do
   @cakes = [lemon_meringue_cake, vanilla_cake, neapolitan_ice_cream]
   if params[:cake0].to_i > 0
-    Orders << [lemon_meringue_cake.name, params[:cake0].to_i,lemon_meringue_cake.price]
+    add_order(lemon_meringue_cake, params[:cake0].to_i)
   end
   if params[:cake1].to_i > 0
-    Orders << [vanilla_cake.name, params[:cake1].to_i,vanilla_cake.price]
+    add_order(vanilla_cake, params[:cake1].to_i)
   end
   if params[:cake2].to_i > 0
-    Orders << [neapolitan_ice_cream.name, params[:cake2].to_i,neapolitan_ice_cream.price]
+    add_order(neapolitan_ice_cream, params[:cake2].to_i)
   end
   @ordersNum = Orders.length
   erb :cakes
@@ -73,13 +85,13 @@ end
 get "/cookies" do
   @cookies = [chocolate_chip_cookie, peanut_butter_cookie, rasperry_cookie]
   if params[:cookie0].to_i > 0
-    Orders << [chocolate_chip_cookie.name, params[:cookie0].to_i,chocolate_chip_cookie.price]
+    add_order(chocolate_chip_cookie, params[:cookie0].to_i)
   end
   if params[:cookie1].to_i > 0
-    Orders << [peanut_butter_cookie.name, params[:cookie1].to_i,peanut_butter_cookie.price]
+    add_order(peanut_butter_cookie, params[:cookie1].to_i)
   end
   if params[:cookie2].to_i > 0
-    Orders << [rasperry_cookie.name, params[:cookie2].to_i,rasperry_cookie.price]
+    add_order(rasperry_cookie, params[:cookie2].to_i)
   end
   @ordersNum = Orders.length
   erb :cookies
@@ -87,13 +99,13 @@ end
 get "/muffins" do
   @muffins = [apple_pie_muffins,coffee_cake_muffins,coconut_muffins]
   if params[:muffin0].to_i > 0
-    Orders << [apple_pie_muffins.name, params[:muffin0].to_i,apple_pie_muffins.price]
+    add_order(apple_pie_muffins, params[:muffin0].to_i)
   end
   if params[:muffin1].to_i > 0
-    Orders << [coffee_cake_muffins.name, params[:muffin1].to_i,coffee_cake_muffins.price]
+    add_order(coffee_cake_muffins, params[:muffin1].to_i)
   end
   if params[:muffin2].to_i > 0
-    Orders << [coconut_muffins.name, params[:muffin2].to_i,coconut_muffins.price]
+    add_order(coconut_muffins, params[:muffin2].to_i)
   end
   @ordersNum = Orders.length
   erb :muffins
