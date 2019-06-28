@@ -6,6 +6,7 @@
     <th scope="col">Price</th>
   </thead>
   <tbody>
+    <% total_price = 0 %>
     <% for x in @order %>
     <tr>
       <td class="centered-td" scope="row">1</td>
@@ -13,6 +14,13 @@
       <td class="centered-td"><%= x[1] %> </td>
       <td class="centered-td"><%= x[2]*x[1] %></td>
     </tr>
+    <% total_price += x[2]*x[1]  %>
     <%end %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="centered-td">Total Price</td>
+      <td class="centered-td">$<%= total_price %></td>
+    </tr>
   </tbody>
 </table>
