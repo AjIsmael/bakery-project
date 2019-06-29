@@ -43,6 +43,22 @@
   // margin-bottom:2rem;
   background-color:#e9ecef;
   border-radius:.3rem;
+  .subscribe, .events-search {
+    text-align: center;
+    height: 10vh;
+      form {
+        padding-left: 10%;
+        .entry {
+          width: 60%;
+          height: 45px;
+        }
+        .submission {
+          width: 30%;
+          height: 52px;
+        }
+      }
+  }
+
 }
 
 .home-page-wrapper {

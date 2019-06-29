@@ -6,9 +6,6 @@ require "./mailer.rb"
 app_key = 'AVPKBRW3EJMHUBKBT347'
 
 Orders = []
-def send_email(rec)
-    Newsletter.w(rec).deliver_now
-end
 
 def add_order(name, quantity)
   new_item = true
@@ -67,13 +64,20 @@ apple_pie_muffins = Muffin.new("Apple Pie Muffins", "180 calories per muffin","T
 coffee_cake_muffins = Muffin.new("Coffee Cake Muffins","180 calories per muffin","Its sweet center and crumble topping, is great dish to serve at a brunch.",2.70,"https://friendly-bakery-nycda.herokuapp.com/images/muffins/coconut-muffins.jpg")
 coconut_muffins = Muffin.new("Coconut Muffins", "180 calories per muffin", "Loaded with coconut are for an easy breakfast or a sweet treat late at night.", 2.70, "https://friendly-bakery-nycda.herokuapp.com/images/muffins/coconut-muffins.jpg")
 
+CAKES =  [lemon_meringue_cake, vanilla_cake, neapolitan_ice_cream]
+MUFFINS = [apple_pie_muffins,coffee_cake_muffins,coconut_muffins]
+COOKIES = [chocolate_chip_cookie, peanut_butter_cookie, rasperry_cookie]
+
+def send_email(rec)
+  Newsletter.menu(rec,COOKIES,CAKES,MUFFINS).deliver_now
+end
 
 get "/" do
   erb :home
 end
 
 get "/cakes" do
-  @cakes = [lemon_meringue_cake, vanilla_cake, neapolitan_ice_cream]
+  @cakes = CAKES
   if params[:cake0].to_i > 0
     add_order(lemon_meringue_cake, params[:cake0].to_i)
   end
@@ -88,7 +92,7 @@ get "/cakes" do
 end
 
 get "/cookies" do
-  @cookies = [chocolate_chip_cookie, peanut_butter_cookie, rasperry_cookie]
+  @cookies = COOKIES
   if params[:cookie0].to_i > 0
     add_order(chocolate_chip_cookie, params[:cookie0].to_i)
   end
@@ -102,7 +106,7 @@ get "/cookies" do
   erb :cookies
 end
 get "/muffins" do
-  @muffins = [apple_pie_muffins,coffee_cake_muffins,coconut_muffins]
+  @muffins = MUFFINS
   if params[:muffin0].to_i > 0
     add_order(apple_pie_muffins, params[:muffin0].to_i)
   end
@@ -140,6 +144,7 @@ get "/events" do
 end
 
 get "/home" do
+  send_email(params[:Email]) if params[:Email]
   erb :home
 end
 

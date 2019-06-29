@@ -43,6 +43,21 @@
   background-color: #e9ecef;
   border-radius: 0.3rem;
 }
+.wrapper .subscribe, .wrapper .events-search {
+  text-align: center;
+  height: 10vh;
+}
+.wrapper .subscribe form, .wrapper .events-search form {
+  padding-left: 10%;
+}
+.wrapper .subscribe form .entry, .wrapper .events-search form .entry {
+  width: 60%;
+  height: 45px;
+}
+.wrapper .subscribe form .submission, .wrapper .events-search form .submission {
+  width: 30%;
+  height: 52px;
+}
 
 .home-page-wrapper {
   height: 38vh;

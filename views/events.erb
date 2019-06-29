@@ -1,7 +1,3 @@
-<form action="/events" method="get">
-  <input type="text" name="address" placeholder="Which Area?">
-  <input type="submit">
-</form>
 
 <div class="main-grid">
   <% for i in 0..2 do %>
@@ -15,4 +11,12 @@
   </div>
   <% end %>
 
+</div>
+
+<div class="wrapper">
+  <h2>Search by area</h2>
+  <form class="events-search" action="/events" method="get">
+    <input type="text" class="entry" name="address" placeholder="Which Area?">
+    <input type="submit" class="submission">
+  </form>
 </div>
