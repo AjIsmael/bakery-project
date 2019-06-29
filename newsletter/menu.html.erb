@@ -9,13 +9,9 @@
     <p>
       You have successfully subscribed. Our lovely menus are as below.
     <p>
-      <img src="menu.jpg" height="300" width="300">
+      <img src="https://i.imgur.com/NMHbK3k.jpg">
       <!-- <table>
-        <thead>
-          <th scope="col">Type</th>
-          <th scope="col">Name</th>
-          <th scope="col">price</th>
-        </thead>
+
         <tbody>
 
         </tbody>
@@ -23,21 +19,18 @@
 
         <% for i in 0..2 do %>
         <tr>
-          <td scope="row">Cookie</td>
           <td><%= @cookies[i].name %></td>
           <td><%= "#{@cookies[i].calories}" %> for $<%= @cookies[i].price %></td>
         </tr>
         <% end %>
         <% for i in 0..2 do %>
         <tr>
-          <td scope="row">Cookie</td>
           <td><%= @cakes[i].name %></td>
           <td><%= "#{@cakes[i].calories}" %> for $<%= @cakes[i].price %></td>
         </tr>
         <% end %>
         <% for i in 0..2 do %>
         <tr>
-          <td scope="row">Cookie</td>
           <td><%= @muffins[i].name %></td>
           <td><%= "#{@muffins[i].calories}" %> for $<%= @muffins[i].price %></td>
         </tr>
