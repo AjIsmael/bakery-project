@@ -2,6 +2,7 @@ require 'sinatra'
 require "httparty"
 require "action_mailer"
 require "./mailer.rb"
+require "./spreadsheet.rb"
 
 app_key = 'AVPKBRW3EJMHUBKBT347'
 
@@ -158,10 +159,11 @@ def confirm_order(recipent, fullname, order, orderNum, time)
   Newsletter.confirmOrder(recipent, fullname, order, orderNum, time).deliver_now
 end
 post "/cart" do
+  @orderNum = rand.to_s[2..10]
+  create_ticket(Orders,@orderNum)
   order = Orders
   @name = params[:FullName]
   @email = params[:Email]
-  @orderNum = rand.to_s[2..10]
   @time = Time.now
   @confirmedOrder = true
   confirm_order(@email, @name, order, @orderNum, @time)
