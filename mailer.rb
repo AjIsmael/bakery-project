@@ -18,6 +18,15 @@ class Newsletter < ActionMailer::Base
     @cookies = cookie
     @cakes = cake
     @muffins = muffin
+    attachments['menu.pdf'] = File.read('C:/Users/ajaeb/Documents/YearUp/bakery-project/menu.pdf', mode: "rb")
     mail(to: recipent, subject: 'Here is Aj\'s Bakery Catalog')
+  end
+
+  def confirmOrder(recipent, fullname, order, orderNum, time)
+    @order = order
+    @orderNum = orderNum
+    @orderTime = time
+    @FullName = fullname
+    mail(to: recipent, subject: "Your Order #{orderNum} Confirmation")
   end
 end

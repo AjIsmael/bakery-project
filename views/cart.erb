@@ -1,26 +1,62 @@
-<table>
-  <thead>
-    <th scope="col">#</th>
-    <th scope="col">Type</th>
-    <th scope="col">Quantity</th>
-    <th scope="col">Price</th>
-  </thead>
-  <tbody>
-    <% total_price = 0 %>
-    <% for x in @order %>
-    <tr>
-      <td class="centered-td" scope="row">1</td>
-      <td><%= x[0] %></td>
-      <td class="centered-td"><%= x[1] %> </td>
-      <td class="centered-td"><%= x[2]*x[1] %></td>
-    </tr>
-    <% total_price += x[2]*x[1]  %>
-    <%end %>
-    <tr>
-      <td></td>
-      <td></td>
-      <td class="centered-td">Total Price</td>
-      <td class="centered-td">$<%= total_price %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="wrapper cartSize">
+  <% if @order.length > 0 %>
+  <table>
+    <thead>
+      <th scope="col">#</th>
+      <th scope="col">Type</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </thead>
+    <tbody>
+      <% total_price = 0 %>
+      <% for x in @order %>
+      <tr>
+        <td class="centered-td" scope="row">1</td>
+        <td><%= x[0] %></td>
+        <td class="centered-td"><%= x[1] %> </td>
+        <td class="centered-td"><%= x[2]*x[1] %></td>
+      </tr>
+      <% total_price += x[2]*x[1]  %>
+      <%end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="centered-td">Total Price</td>
+        <td class="centered-td">$<%= total_price %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= @time if @confirmedOrder %>
+  <button class="open-button" id="order-btn" onclick="openForm()">Order</button>
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container" method="post">
+      <input type="text" name="FullName" placeholder="John Doe" required>
+      <input type="email" name="Email" placeholder="johndoe@example.com" required>
+      <input type="submit" data-toggle="modal" data-target="#myModal"> Check Out </button>
+
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<% else %>
+  <% if @confirmedOrder %>
+     <h1> Your order have been submitted, dear <%= @name %> </h1>
+     <h5>Your order confirmation Number is: <%= @orderNum %> recieved at <%= @time %>.</h5>
+     <h5>Please check your email: <%= @email %> for more details.</h5>
+  <% else %>
+     <p> Your cart is empty. Are you sure you checked our delicious cookies? </p>
+  <% end %>
+<% end %>
+</div>
+
+<script type="text/javascript">
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    document.getElementById("order-btn").style.display = "none";
+
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    document.getElementById("order-btn").style.display = "block";
+  }
+</script>

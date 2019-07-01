@@ -7,16 +7,9 @@
   <body>
     <h1>Welcome to Aj Bakery, Dear Customer</h1>
     <p>
-      You have successfully subscribed. Our lovely menus are as below.
+      You have successfully subscribed. Our lovely menus are listed and attached below.
     <p>
-      <img src="https://i.imgur.com/NMHbK3k.jpg">
-      <!-- <table>
-
-        <tbody>
-
-        </tbody>
-      </table>
-
+      <table>
         <% for i in 0..2 do %>
         <tr>
           <td><%= @cookies[i].name %></td>
@@ -35,6 +28,8 @@
           <td><%= "#{@muffins[i].calories}" %> for $<%= @muffins[i].price %></td>
         </tr>
         <% end %>
-         -->
+      </table>
+
+
   </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Thank you <%= @FullName %> for your order</h1>
+    <p>
+      Your confirmation number is <%= @orderNum %> which we recieved at <%= @orderTime %> and the details of your order is as follows:
+    <p>
+      <table>
+        <thead>
+          <th scope="col">#</th>
+          <th scope="col">Type</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </thead>
+        <tbody>
+          <% total_price = 0 %>
+          <% for x in @order %>
+          <tr>
+            <td class="centered-td" scope="row">1</td>
+            <td><%= x[0] %></td>
+            <td class="centered-td"><%= x[1] %> </td>
+            <td class="centered-td"><%= x[2]*x[1] %></td>
+          </tr>
+          <% total_price += x[2]*x[1]  %>
+          <%end %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="centered-td">Total Price</td>
+            <td class="centered-td">$<%= total_price %></td>
+          </tr>
+        </tbody>
+      </table>
+  </body>
+</html>
