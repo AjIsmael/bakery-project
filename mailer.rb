@@ -18,7 +18,7 @@ class Newsletter < ActionMailer::Base
     @cookies = cookie
     @cakes = cake
     @muffins = muffin
-    attachments['menu.pdf'] = File.read('C:/Users/ajaeb/Documents/YearUp/bakery-project/menu.pdf', mode: "rb")
+    attachments['menu.pdf'] = File.read("#{File.expand_path(File.dirname(__FILE__))}/menu.pdf", mode: "rb")
     mail(to: recipent, subject: 'Here is Aj\'s Bakery Catalog')
   end
 

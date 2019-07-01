@@ -20,14 +20,13 @@
 .navbar a {
   float: left;
   display: block;
-  color: black;
+  color: #243680;
   text-align: center;
   text-decoration: none;
   margin-left: 20px;
 }
 .navbar a:hover {
   transform: scale(1.5);
-  color: green;
   transition-duration: 2s;
 }
 
@@ -137,12 +136,14 @@ h5, h4, h6 {
 
 h2 {
   font-size: 25px !important;
+  color: #4287f5 !important;
   font-style: italic;
 }
 
 p {
   text-align: left;
   margin-left: 1px;
+  color: #822b66 !important;
 }
 
 .dropdown {

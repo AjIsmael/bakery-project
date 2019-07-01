@@ -7,7 +7,7 @@ def create_ticket(order,name)
   sheet1.row(0).concat %w{Order Quantity}
   i = 1
   for x in order do
-    sheet1.row(i).push order[0],order[1]
+    sheet1.row(i).push x[0], x[1]
     i += 1
   end
   folder_address = File.expand_path(File.dirname(__FILE__))
