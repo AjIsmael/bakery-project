@@ -72,7 +72,7 @@
 
 body {
   margin: 0;
-  background-image: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2286196/910/607/m2/fpnw/wm1/1606_bakery-1screen-.jpg?1487247061&s=b06689cf630f234f3d45f277aae1924b");
+  background-image: url("/img/background2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -88,7 +88,7 @@ body {
 
 .short-detail {
   display: block;
-  height: 19vh;
+  height: 23vh;
   width: 100%;
   margin-top: 10vh;
 }
@@ -133,7 +133,7 @@ h5, h4, h6 {
 }
 
 h2 {
-  font-size: 1.3em;
+  font-size: 25px;
   font-style: italic;
 }
 
@@ -167,7 +167,7 @@ p {
 .footer {
   width: 100%;
   margin-top: 3vh;
-  grid-template: 35vh / 19% 19% 19% 19% 19%;
+  grid-template: 35vh / 24% 24% 24% 24%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

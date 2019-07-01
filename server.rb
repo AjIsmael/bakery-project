@@ -4,7 +4,7 @@ require "action_mailer"
 require "./mailer.rb"
 require "./spreadsheet.rb"
 
-app_key = 'AVPKBRW3EJMHUBKBT347'
+app_key = ENV['Eventbrite_key']
 
 Orders = []
 

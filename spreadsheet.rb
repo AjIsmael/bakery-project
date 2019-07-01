@@ -6,12 +6,11 @@ def create_ticket(order,name)
   sheet1 = book.create_worksheet
   sheet1.row(0).concat %w{Order Quantity}
   i = 1
-  for x in orer do
+  for x in order do
     sheet1.row(i).push order[0],order[1]
     i += 1
   end
   folder_address = File.expand_path(File.dirname(__FILE__))
-  folder_address << "/orders/Order#{name}"
-  folder_address << ".xls"
+  folder_address << "/orders/Order#{name}.xls"
   book.write folder_address
 end
