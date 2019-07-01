@@ -27,14 +27,13 @@
     </tbody>
   </table>
   <%= @time if @confirmedOrder %>
-  <button class="open-button" id="order-btn" onclick="openForm()">Order</button>
+  <button class="open-button btn cancel" id="order-btn" onclick="openForm()">Order</button>
 <div class="form-popup" id="myForm">
   <form action="" class="form-container" method="post">
       <input type="text" name="FullName" placeholder="John Doe" required>
       <input type="email" name="Email" placeholder="johndoe@example.com" required>
-      <input type="submit" data-toggle="modal" data-target="#myModal"> Check Out </button>
-
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      <input type="submit" value = "Checkout" class = "btn cancel" data-toggle="modal" data-target="#myModal">
+    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
   </form>
 </div>
 <% else %>

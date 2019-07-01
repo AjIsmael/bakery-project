@@ -58,12 +58,12 @@ peanut_butter_cookie = Cookie.new("Peanut Butter Cookie", "135 calories per cook
 rasperry_cookie = Cookie.new("Rasperry Cookie", "120 calories per cookie", "Thumbprint cookies with a buttery base, filled with raspberry preserves",1.60, "https://friendly-bakery-nycda.herokuapp.com/images/cookies/raspberry-cookies.jpg")
 
 lemon_meringue_cake = Cake.new("Lemon Meringue Cake", "170 calories per slice", "It's not only a deliciously different dessert; it's also a conversation piece!", 4.50, "https://friendly-bakery-nycda.herokuapp.com/images/cakes/lemon-meringue-cake.jpg")
-vanilla_cake = Cake.new("Vanilla Cake with Blueberries", "170 calories per slice", "Pairs fluffy vanilla cake layers with a silky vanilla buttercream.", 4.50, "https://friendly-bakery-nycda.herokuapp.com/images/cakes/vanilla-white-cake.jpg")
+vanilla_cake = Cake.new("Vanilla with berries", "170 calories per slice", "Pairs fluffy vanilla cake layers with a silky vanilla buttercream.", 4.50, "https://friendly-bakery-nycda.herokuapp.com/images/cakes/vanilla-white-cake.jpg")
 neapolitan_ice_cream = Cake.new("Neapolitan Ice Cream","180 calories per slice","Tasty combination of chocolate, strawberry, and vanilla ice cream. ", 4.50, "https://friendly-bakery-nycda.herokuapp.com/images/cakes/neapolitan-ice-cream-cake.jpg")
 
 apple_pie_muffins = Muffin.new("Apple Pie Muffins", "180 calories per muffin","These buttery fruity muffins are ideal for dessert or fancy breakfast treats.", 2.70, "https://friendly-bakery-nycda.herokuapp.com/images/muffins/apple-pie-muffins.jpg")
-coffee_cake_muffins = Muffin.new("Coffee Cake Muffins","180 calories per muffin","Its sweet center and crumble topping, is great dish to serve at a brunch.",2.70,"https://friendly-bakery-nycda.herokuapp.com/images/muffins/coconut-muffins.jpg")
-coconut_muffins = Muffin.new("Coconut Muffins", "180 calories per muffin", "Loaded with coconut are for an easy breakfast or a sweet treat late at night.", 2.70, "https://friendly-bakery-nycda.herokuapp.com/images/muffins/coconut-muffins.jpg")
+coffee_cake_muffins = Muffin.new("Coffee Cake Muffins","180 calories per muffin","Its sweet center and crumble topping, a great dish to serve.",2.70,"https://friendly-bakery-nycda.herokuapp.com/images/muffins/coconut-muffins.jpg")
+coconut_muffins = Muffin.new("Coconut Muffins", "180 calories per muffin", "Loaded with coconut are for an easy breakfast or a sweet treat.", 2.70, "https://friendly-bakery-nycda.herokuapp.com/images/muffins/coconut-muffins.jpg")
 
 CAKES =  [lemon_meringue_cake, vanilla_cake, neapolitan_ice_cream]
 MUFFINS = [apple_pie_muffins,coffee_cake_muffins,coconut_muffins]
